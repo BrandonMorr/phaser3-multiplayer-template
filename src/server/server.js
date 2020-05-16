@@ -9,7 +9,7 @@ import Compression from 'compression';
 const app = Express();
 const server = Http.Server(app);
 const io = SocketIO(server);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 0;
 
 // Fire up Helmet and Compression for better Express security and performance.
 app.use(Helmet());
@@ -25,7 +25,7 @@ app.get('/', function(request, response) {
 
 // Tell server to start listening for connections.
 server.listen(port, () => {
-  console.log('\n🕺 server init complete, listening for connections on port ' + port + ' 💃\n');
+  console.log('\n🕺 server init complete, listening for connections on port ' + server.address().port + ' 💃\n');
 
   // Start listening for events from client.
   setServerHandlers();
