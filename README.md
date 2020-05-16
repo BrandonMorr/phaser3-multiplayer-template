@@ -1,2 +1,3 @@
-# phaser3-multiplayer-template
-Phaser 3 Multiplayer Template (ES6, Webpack, Socket IO)
+### Phaser 3 Multiplayer Game Template
+
+Will document when not feeling like a lazy turd.
