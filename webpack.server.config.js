@@ -10,7 +10,7 @@ module.exports = {
   node: {
     __dirname: false
   },
-  entry: './src/server/server.js',
+  entry: './src/server/server',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'server.bundle.js'

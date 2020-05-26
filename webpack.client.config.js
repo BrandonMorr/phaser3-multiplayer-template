@@ -16,28 +16,19 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [ definePlugin ],
   entry: {
-    app: [ client ],
-    vendor: [ 'phaser' ]
+    app: client,
   },
   output: {
     path: path.join(www, 'js'),
     filename: 'bundle.js',
     publicPath: '/'
   },
-  optimization: {
-    splitChunks: {
-      name: 'vendor',
-      chunks: 'all'
-    }
-  },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: [ nodeModules, server ],
-        use: {
-          loader: 'babel-loader'
-        }
+        use: 'babel-loader'
       },
       {
         test: /\.(png|jpg|gif|ico|svg|pvr|pkm|static|ogg|mp3|wav)$/,
@@ -45,10 +36,5 @@ module.exports = {
         use: 'file-loader'
       },
     ]
-  },
-  node: {
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty'
   }
 };
